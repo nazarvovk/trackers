@@ -1,8 +1,16 @@
 .SelectTrackerPage{
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 
   p{
     color: var(--color-light);
+  }
+
+  .author{
+    a {
+      margin-left: .4rem;
+      color: var(--color-light)
+    }
   }
 }
