@@ -1,0 +1,105 @@
+.TrackerEntry {
+  width: 100%;
+  height: 5rem;
+  border-radius: 1rem;
+  border: 2px solid var(--color-darker);
+  padding: 0.5rem;
+  padding-right: 1rem;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.25rem;
+  transition: background ease-in-out .2s;
+  animation: trackerAppear ease-out .5s;
+  overflow: hidden;
+  &:last-child {
+    margin-bottom: 12rem;
+  }
+
+  &.Reached {
+    background-color: var(--color-lighter);
+  }
+
+  input {
+    background-color: var(--color-darker);
+    border: none;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    transition: all ease-in-out 0.2s;
+    border-radius: 0.5rem;
+    font-size: 2rem;
+    color: var(--main-color);
+    -moz-appearance: textfield;
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+    }
+    &:focus {
+      outline: none;
+    }
+    &:hover {
+      filter: brightness(110%);
+    }
+  }
+  .TrackerEntryTime {
+    color: var(--color-light);
+    text-align: center;
+    margin: 0 0.5rem;
+    flex-shrink: 1;
+    white-space: pre;
+  }
+  .InputContainer {
+    flex-shrink: 2;
+  }
+}
+@keyframes trackerAppear {
+  0%{
+    opacity: 0;
+    max-height: 0;
+    transform: translateY(-5rem) scale(.1);
+    border-color: transparent;
+  }
+  25%{
+    max-height: 80px;
+    transform: translateY(-5.5rem) scale(1);
+    opacity: 1;
+  }
+  50%{
+    transform: translateY(-5.5rem) scale(1);
+  }
+  75%{
+    border-color: transparent;
+  }
+  100%{
+    transform: translateY(0) scale(1);
+    border-color: var(--color-darker);
+  }
+}
+.DeleteButton {
+  background: none;
+  border: none;
+  color: var(--main-color);
+  width: 3rem;
+  height: 3rem;
+  flex-shrink: 0;
+  padding: 0;
+  border-radius: 50%;
+  font-family: monospace;
+  font-weight: 700;
+  transition: all ease-in-out 0.1s;
+  &:focus {
+    outline: none;
+  }
+  svg {
+    transition: all ease-in-out 0.1s;
+    opacity: 0.5;
+  }
+  &:hover {
+    background-color: var(--color-lighter);
+    svg {
+      opacity: 1;
+    }
+  }
+}

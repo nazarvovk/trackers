@@ -1,0 +1,85 @@
+.TabBar {
+  height: 42px;
+  width: 100%;
+  background-color: var(--color-darkest);
+  display: flex;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  z-index: 100;
+  position: absolute;
+  overflow-x: scroll;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+    background: transparent;
+    display: none;
+  }
+  @media screen and (max-width: 1023px) {
+    height: 64px;
+  }
+}
+.Tab {
+  box-sizing: border-box;
+  width: 240px;
+  min-width: 140px;
+  font-size: 0.8rem;
+  background-color: var(--color-darker);
+  border-left: 1px solid var(--color-darkest);
+  display: block;
+  color: var(--main-color);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 1rem;
+  transition: all 0.2s ease-out;
+  &:hover {
+    filter: brightness(110%);
+  }
+  &.Tab__Active {
+    border-radius: 10px 10px 0 0;
+    background-color: var(--color);
+    font-weight: 700;
+  }
+  span {
+    width: calc(100% - 1.8rem);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  button {
+    background: none;
+    border: none;
+    color: var(--main-color);
+    width: 1.5rem;
+    height: 1.5rem;
+    display: block;
+    padding: 0;
+    border-radius: 50%;
+    &:focus {
+      outline: none;
+    }
+    &:hover {
+      background-color: var(--color-lighter);
+    }
+  }
+}
+.AddButton {
+  width: 2rem;
+  height: 2rem;
+  background: none;
+  border: none;
+  color: var(--main-color);
+  font-size: 1.5rem;
+  align-self: center;
+  margin: 0 0.5rem;
+  border-radius: 50%;
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    background-color: var(--color-lighter);
+  }
+}

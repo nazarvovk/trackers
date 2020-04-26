@@ -1,13 +1,27 @@
+:root {
+  --color: rgb(21, 32, 43);
+  --color-darker: rgb(16, 23, 30);
+  --color-darkest: rgb(11, 17, 23);
+  --color-lighter: rgb(29, 42, 54);
+  --color-light: rgb(112, 130, 148);
+  --main-color: #ffffff;
+  --background: linear-gradient(rgb(21, 32, 43) 10%, rgb(16, 24, 34) 100%);
+}
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  color: var(--main-color);
+  font-family: 'Lato', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+    'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: var(--background);
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+button{
+  cursor: pointer;
+}
+*:focus {
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
 }

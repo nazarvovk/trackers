@@ -1,24 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Route, Redirect, Switch } from 'react-router-dom';
+import TabBar from './components/TabBar';
+import TrackerPage from './pages/TrackerPage';
+import SelectTrackerPage from './pages/SelectTrackerPage';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Route path="/" exact>
+        <Redirect to="/tracker/" />
+      </Route>
+      <Route path={['/tracker/:trackerId', '/tracker']}>
+        <TabBar />
+        <Switch>
+          <Route path="/tracker" exact>
+            <SelectTrackerPage />
+          </Route>
+          <Route path="/tracker/:trackerId">
+            <TrackerPage />
+          </Route>
+        </Switch>
+      </Route>
     </div>
   );
 }
